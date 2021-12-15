@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice 2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="Controller/Controleur.js"></script>
+</head>
+<body>
+        <div ng-app="formApp">
+                <form class="form-horizontal" name="registerForm">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="nomclt">Nom du client</label>
+                        <div class="col-md-3">
+                            <input id="nomclt" type="nomclt" class="form-control" name="nomclt" ng-model="nomclt" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="tel">Tél </label>
+                        <div class="col-md-3">
+                            <input id="tel" type="text" class="form-control" value="00216" name="tel" ng-model="tel" required ng-maxlength="12"/>
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="prod">Produit</label>
+                        <div class="col-md-3">
+                            <select name="prod" id="prod" class="form-control" ng-model="prod">
+                                    <option value="Ordinateur ">Ordinateur </option>
+                                    <option value="Flash ">Flash </option>
+                                    <option value="Clavier ">Clavier </option>
+                                    <option value="Souris ">Souris</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label class="col-md-3 control-label" for="qte">Quantité</label>
+                            <div class="col-md-3">
+                                <input type="radio" name="qte" id="qte"  ng-model="qte">1 
+                                <input type="radio" name="qte" id="qte"  ng-model="qte">2 
+                                <input type="radio" name="qte" id="qte"  ng-model="qte">3 
+                                <input type="radio" name="qte" id="qte"  ng-model="qte">4                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <div class="col-md-9">
+                                <input type="submit" class="btn btn-secondary" value="Commander" ng-disabled="registerForm.$invalid" />
+                        </div>
+                        </div>
+                    </form>
+        </div>        
+</body>
+</html>

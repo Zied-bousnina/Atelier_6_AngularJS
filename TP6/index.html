@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="formApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="Controller/Controleur.js"></script>
+</head>
+<body ng-controller="monControleur">
+        <form name="signupForm0" ng-submit="signup()">
+            Nom : <input type="text" ng-model="lastname" name="lastname"
+                ng-maxlength="12" ng-minlength="2" required>
+                <input type="submit" value="Envoyer">
+        </form>
+        <form name="signupForm" ng-submit="signup()">
+                <label for="lastname"> Nom : </label>
+                <input type="text" required ng-model="lastname" name="lastname">
+                <div ng-show="signupForm.lastname.$invalid">
+                    Vous devez renseigner le champ Nom
+                </div>
+                <label for="firstname">
+                Prenom :
+                <input type="text" required ng-model="firstname" name="firstname">
+                </label>
+                <div ng-show="signupForm.firstname.$invalid">
+                    Vous devez renseigner le champ Prénom
+                </div>
+
+                <input type="submit" value="Envoyer" ng-disabled = "signupForm.$invalid" />
+
+                </form>
+</body>
+</html>
